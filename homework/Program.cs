@@ -3,17 +3,21 @@
 456 -> 5
 782 -> 8
 918 ->-> 1*/
-
+Console.Write("Введите трехзначное число: ");
 int GetValue ()
 {
-    Console.Write("Введите трехзначное число: ");
-    int number = Convert.ToInt32(Console.ReadLine());
-    return number;
+    int value = Convert.ToInt32(Console.ReadLine());
+    return value;
 }
 int SecontNumber(int number)
 {
 number = (number/10)%10;
 return number;
 }
-int value= SecontNumber(GetValue());
- Console.WriteLine("Вторая цифра от введенного числа-> "+" "+value);
+int second= GetValue();
+while (second >999 || second < 100) {
+     Console.Write("Число "+second +"  не является трехзначным. Пожалуйста, введите трехначное число: ");
+     second= GetValue();
+}
+second= SecontNumber(second);
+ Console.WriteLine("Вторая цифра от введенного числа-> "+" "+second);
