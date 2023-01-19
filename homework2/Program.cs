@@ -8,12 +8,12 @@
 
 Console.Write("Введите любое число: ");
  int number = Convert.ToInt32(Console.ReadLine());
- int TrirdNumber (int number)
+ int TrirdNumber (int value)
  {
-     while ( number> 999)
-     { number= number/10;}
-    number =number%10;
-    return number;
+     while ( value> 999)
+     { value= value/10;}
+    value =value%10;
+    return value;
  }
 if (number> 99) 
 {
