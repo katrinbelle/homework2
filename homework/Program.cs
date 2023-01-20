@@ -15,9 +15,22 @@ number = (number/10)%10;
 return number;
 }
 int second= GetValue();
-while (second >999 || second < 100) {
-     Console.Write("Число "+second +"  не является трехзначным. Пожалуйста, введите трехначное число: ");
-     second= GetValue();
+int OutText(int value)
+{
+    Console.Write("Число "+value +"  не является трехзначным. Пожалуйста, введите трехначное число: ");
+     value= GetValue();
+     return value;
+     }
+int DataChecking(int data){
+    if (data >-999 || data <-100){
+       data= data *-1;
+    } 
+    return data;
 }
+second=DataChecking(second);
+while (second >999 || second < 100) {
+  second=OutText(second);
+  second=DataChecking(second);
+     }
 second= SecontNumber(second);
  Console.WriteLine("Вторая цифра от введенного числа-> "+" "+second);
